@@ -82,8 +82,14 @@ with tab_single:
         family = c1.selectbox("Family status", opts["NAME_FAMILY_STATUS"])
         education = c2.selectbox("Education", opts["NAME_EDUCATION_TYPE"])
         housing = c3.selectbox("Housing type", opts["NAME_HOUSING_TYPE"])
-        own_car = c1.selectbox("Owns a car", opts["FLAG_OWN_CAR"])
-        own_realty = c2.selectbox("Owns real estate", opts["FLAG_OWN_REALTY"])
+        own_car = c1.selectbox(
+        "Owns a car",
+        opts.get("FLAG_OWN_CAR", ["N", "Y"])
+        )
+        own_realty = c2.selectbox(
+        "Owns real estate",
+        opts.get("FLAG_OWN_REALTY", ["N", "Y"])
+        )
 
         st.subheader("Employment & income")
         c4, c5, c6 = st.columns(3)
